@@ -1,2 +1,14 @@
-# dotfiles
-my dotfiles for hyprland, waybar &amp; rofi
+# mimi's dotfiles 🐇 
+dotfiles for hyprland, waybar &amp; rofi
+
+❗these dotfiles obviously are quite personalised, so compatibility can vary. they might not be a drop-in solution basically.
+
+✍️ fonts:
+- Cascadia Mono NF
+- SF Pro Display/Rounded
+- Font Awesome 6 Free
+
+🖌️ colors:
+- catppuchin macchiato (mauve)
+- some colors i picked myself
+
