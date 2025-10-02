@@ -2,5 +2,7 @@
 !*/
 
 !hypr/**
+hypr/hyprpaper.conf
+hypr/hyprlock.conf
 !waybar/**
 !rofi/**

@@ -1,0 +1,169 @@
+@import "macchiato.css";
+
+* {
+    /* font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
+    font-family: SF Pro Rounded;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+window#waybar {
+    background-color: alpha(@mauve, 0.4);
+    /*background-image: linear-gradient(69deg, alpha(#b4befe, 1.0), alpha(#cba6f7, 1.0));*/
+    /*color: alpha(@subtext2, 1.0);*/
+    color: alpha(white, 1.0);
+    transition: background-color 0.5s;
+
+    /*box-shadow: 0 10px 2px alpha(@base, 1);*/
+}
+
+window#waybar.hidden {
+    /* opacity: 0.2; */
+}
+
+#window {
+    font-family: 'Sarasa Gothic SC', sans-serif;
+}
+
+#clock {
+    min-width: 140px;
+    color: alpha(@subtext2, 1.0);
+    padding: 0px 0px;
+    border-radius: 0px;
+}
+
+/* #custom-power { # not necessary for my config
+    font-weight: bold;
+    color: #ffffff;
+    background: #536067;
+    padding: 5px 10px;
+    border-radius: 4px;
+} */
+
+#battery,
+#cpu,
+#memory,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#mode,
+#idle_inhibitor,
+#keyboard-state,
+#custom-notification,
+#scratchpad {
+    padding: 0px 15px;
+    margin: 2px 0px;
+    background-color: alpha(@mauve, 0.2);
+    border-radius: 30px;
+}
+
+#battery.charging {
+    /* background-color: alpha(@overlay0, 0.8); */
+}
+
+#battery.critical:not(.charging) {
+    background-color: #ed8796;
+    /* animation: blink 0.5s linear infinite alternate; */
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #3b3f51;
+    }
+}
+
+#network.disconnected {
+    background-color: alpha(@disabled-background, 0.2);
+    color: alpha(@disabled-text, 1.0);
+}
+
+#pulseaudio {
+    color: alpha(@subtext2, 1.0);
+}
+
+#pulseaudio.muted {
+    background-color: alpha(@disabled-background, 0.2);
+    color: alpha(@disabled-text, 1.0);
+}
+
+#tray {
+    background-color: alpha(@lavender, 0.5);
+    color: alpha(@subtext2, 1.0);
+    border-radius: 30px 0px 0px 30px;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+    color: alpha(@red, 1.0);
+}
+
+#tray>.needs-attention {
+    background-color: @red;
+    color: alpha(@text, 1.0);
+}
+
+#idle_inhibitor.activated {
+    background-color: alpha(@surface2, 0.2);
+    color: alpha(@subtext2, 1.0);
+    margin: 0;
+    padding: 0 15px;
+    border-radius: 30px;
+}
+
+#workspaces * {
+    /*font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;*/
+    font-family: "Font Awesome 6 Free";
+    font-size: 14px;
+    margin: 2px 0px;
+}
+
+#workspaces button,
+#mode {
+    border-radius: 30px;
+    padding: 6px 10px;
+    color: @subtext2;
+}
+
+#workspaces button:hover,
+#workspaces button.focused {
+    color: @subtext2;
+    border-radius: 30px;
+    /*box-shadow: inset 0 -3px #000000;*/
+}
+
+#workspaces button.active {
+    background-color: @lavender;
+    border-radius: 30px;
+    color: @surface2;
+    /*box-shadow: inset 0 -3px #000000;*/
+}
+
+#workspaces button.empty {
+    border-radius: 30px;
+    color: alpha(@subtext1, 0.3);
+    /*box-shadow: inset 0 -3px #000000;*/
+}
+
+#workspaces button.empty:hover {
+    border-radius: 30px;
+    color: @surface2;
+    /*box-shadow: inset 0 -3px #000000;*/
+}
+
+#workspaces button.urgent {
+    box-shadow: inset 0px 3px @red;
+    transition: box-shadow 0.2s ease;
+    border-radius: 0px;
+}
+
+label:focus {
+    background-color: #000000;
+}

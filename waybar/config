@@ -1,0 +1,136 @@
+{
+  "spacing": 10,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "backlight",
+    "pulseaudio",
+    "battery",
+    "network",
+    //"custom/power",
+    "idle_inhibitor",
+    "custom/notification",
+    "tray"
+  ],
+
+  "clock": {
+    "interval": 30,
+    "format": "{:%H:%M - %a, %d %b %Y}",
+    "tooltip-format": "<span size='12pt'><tt>{calendar}</tt></span>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+
+  "cpu": {
+    "interval": 1,
+    "format": "<span font_family='Font Awesome 6 Free'></span> {usage}%"
+  },
+
+  "memory": {
+    "interval": 1,
+    "format": "<span font_family='Font Awesome 6 Free'></span> {}%"
+  },
+
+  "backlight": {
+    "format": "<span font_family='Font Awesome 6 Free'>{icon}</span> {percent}%",
+    "format-icons": ["🔅", "🔆"]
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "interval": 1,
+    "format": "<span font_family='Font Awesome 6 Free'>{icon}</span> {capacity}%",
+    "format-charging": "<span font_family='Font Awesome 6 Free'>⚡</span> {capacity}%",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "network": {
+    "format-wifi": "<span font_family='Font Awesome 6 Free'></span> {essid}",
+    //"format-wifi": "<span font_family='Font Awesome 6 Free'></span> {signalStrength}% {essid}",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      //"active": "",
+      "default": "",
+      "empty": ""
+      //"visible": ""
+    },
+    "persistent-workspaces": {
+      "DP-2": [ 2,3,4,5,6,7,8,9 ],
+      "DP-1": 1 
+    }
+  },
+
+  "pulseaudio": {
+    "format": "<span font_family='Font Awesome 6 Free'>{icon}</span> {volume}%",
+    "format-bluetooth": "<span font_family='Font Awesome 6 Free'>{icon}</span><span font_family='Font Awesome 6 Free'></span> {volume}%",
+    "format-muted": "<span font_family='Font Awesome 6 Free'></span> {format_source}",
+    "format-source": "{volume}%",
+    "format-source-muted": "<span font_family='Font Awesome 6 Free'></span>",
+    "format-icons": {
+      "headphone": "<span font_family='Font Awesome 6 Free'></span>",
+      "hands-free": "<span font_family='Font Awesome 6 Free'></span>",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "idle_inhibitor": {
+    "format": "<span font_family='Font Awesome 6 Free'>{icon}</span>",
+    "format-icons": {
+      "activated": "<span font_family='Font Awesome 6 Free'></span>",
+      "deactivated": "<span font_family='Font Awesome 6 Free'></span>"
+    }
+  },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "<span font_family='Font Awesome 6 Free'>{icon}</span>",
+    "format-icons": {
+      "notification": "<span font_family='Font Awesome 6 Free'></span><span foreground='#ed8796'><small></small></span>",
+      "none": "<span font_family='Font Awesome 6 Free'></span>",
+      "dnd-notification": "<span font_family='Font Awesome 6 Free'></span><span foreground='#ed8796'><small></small></span>",
+      "dnd-none": "<span font_family='Font Awesome 6 Free'></span>",
+      "inhibited-notification": "<span font_family='Font Awesome 6 Free'></span><span foreground='#ed8796'><small></small></span>",
+      "inhibited-none": "<span font_family='Font Awesome 6 Free'></span>",
+      "dnd-inhibited-notification": "<span font_family='Font Awesome 6 Free'></span><span foreground='#ed8796'><small></small></span>",
+      "dnd-inhibited-none": "<span font_family='Font Awesome 6 Free'></span>"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
+  "tray": {
+    "spacing": 10,
+    "icon-size": 20
+  }
+}
+
+//"inhibited-notification": "<span font_family='Font Awesome 6 Free'></span><span foreground='#ed8796'><sup></sup></span>",
